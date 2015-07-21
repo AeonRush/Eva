@@ -1,0 +1,22 @@
+.big-button {
+    display: inline-block;
+    padding: 40px 60px;
+    margin: 10px;
+    font-size: 200%;
+    color: rgb(10, 11, 87);
+    border: 3px rgb(10, 11, 87) solid;
+    position: relative;
+}
+.big-button:hover {
+    background-color: rgb(10, 11, 87);
+    color: rgb(250, 250, 250);
+}
+@media all and (max-width: 1024px) {
+    .big-button {
+        margin: 0px;
+        display: block;
+        padding: 40px 10px;
+        width: 100%;
+        align-self: stretch;
+    }
+}

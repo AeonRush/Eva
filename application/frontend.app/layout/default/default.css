@@ -1,0 +1,323 @@
+﻿
+.font-normal, .font-normal * {
+    font-family: "Neo Sans", "Segoe UI", "Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif" !important;
+    font-weight: normal !important;
+}
+.font-light, .font-light * {
+    font-family: "Neo Sans Light", "Segoe UI", "Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif" !important;
+    font-weight: 100 !important;
+}
+
+*{
+	font-family: "Neo Sans", "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol", "Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	color: rgb(13, 13, 13);
+	outline: none;
+}
+html, body {
+    font-size: 14px;
+    height: 100%;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+p a {
+    border-bottom: 1px transparent solid;
+    font-style: italic;
+    transition-duration: 1s;
+}
+p a:hover {
+    border-color: rgb(250, 250, 250);
+    transition-duration: .5s;
+}
+img {
+	 border: none;
+}
+
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+.cb {
+	clear: both;
+}
+
+.dn {
+	display: none !important;
+}
+.table {
+    display: table;
+    width: 100%;
+}
+.table > * {
+    display: table-cell;
+}
+
+h1{
+	line-height: 1.1em;
+    padding: 10px 0px 10px 0px;
+    font: 450% "Helvetica Ultra Light";
+    margin: 0px auto;
+    display: table;
+}
+h2 {
+	font-size: 200%;
+	line-height: 2em;
+    padding: 10px 0px 10px 0px;
+    display: inline-block;
+}
+body > * > *, .center {
+    padding: 75px 20px 75px 20px;
+    max-width: 1600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center {
+    padding: 0px;
+}
+.font-white, .font-white * {
+    color: rgb(250, 250, 250);
+}
+/*
+    Menu
+*/
+body > article, body > section {
+    box-sizing: border-box;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+body > article > *, body > section > * {
+    align-self: center;
+}
+header {
+    background-color: rgb(39, 39, 39);
+    display: block;
+}
+header > * {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+header > nav:first-child {
+    display: none;
+}
+header > nav > a {
+    margin: 0px 0px 0px 0px;
+    display: inline-block;
+    color: rgb(250, 250, 250);
+    font-size: 125%;
+    padding: 10px;
+    transition-duration: .5s;
+    position: relative;
+    text-align: center;
+}
+header > nav > a:after {
+    display: block;
+    margin: 0px auto;
+    content: "";
+    height: 1px;
+    width: 100%;
+    max-width: 0px;
+    background-color: rgb(250, 250, 250);
+}
+header > nav > a:hover:after{
+    color: rgb(250, 250, 250);
+    transition-duration: 1s;
+    max-width: 200px;
+}
+/*
+    Content    
+*/
+.logo {
+    background-image: linear-gradient(45deg, rgb(10, 10, 87) 0%, rgb(210, 10, 110) 100%);
+    background-color: rgb(210, 0, 0);
+}
+.logo h1 {
+/*
+    text-shadow: 0px 1px 2px rgb(0,0,0);
+*/
+    text-align: center;
+    font-size: 1250%;
+}
+header nav a.active {
+    background-color: rgb(110, 11, 16);
+}
+/*
+    Footer
+*/
+.social-share {
+    background-color: rgb(69, 69, 69);
+    border-top: 8px rgb(210, 0, 0) solid;
+    border-bottom: 8px rgb(210, 0, 0) solid;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+}
+.social-share * {
+    text-shadow: 0px 1px 2px rgb(39, 39, 39);
+}
+.social-share nav > a {
+    display: table;
+    margin: 10px 0px 10px 0px;
+}
+.social-share nav > a > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+.social-share nav > a > img {
+    width: 32px;
+    height: 32px;
+}
+.social-share nav > a > span {
+    font-size: 150%;
+    padding-left: 20px;
+}
+
+footer {
+    font-size: 75%;
+    background-color: rgb(13, 13, 13);
+    color: rgb(250, 250, 250);
+}
+footer * {
+    color: rgb(250, 250, 250);
+}
+footer a {
+    margin: 0px 20px 0px 10px;
+}
+footer select {
+    border:  none;
+    padding: 5px;
+    display: inline-block;
+    margin-top: -7px;
+    background-color: rgb(39, 39, 39);
+    position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+    @-ms-viewport{
+        width: 320px;
+    }
+    @viewport{
+        width: 320px;
+    }
+
+    body {
+        background: none;
+        overflow-x: hidden;
+    }
+
+    body > *:not(.full-width):not(header) > *, footer > div:not(.full-width) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .full-width, .full-width > * {
+        padding: 0px;
+        min-height: 1px !important;
+    }
+    .mobile-valign-top > *{
+        align-self: stretch;
+    }
+    .table {
+        display: block;
+        width: auto;
+    }
+    .table > * {
+        display: block;
+    }
+
+    article .table > *:last-child {
+        padding-left: 0px;
+    }
+    header {
+        /*
+        position: absolute;
+        top: -69px;
+        */
+        width: 100%;
+    }
+    body.hide header {
+        top: 0px;
+        transition-delay: 1s;
+        transition-duration: .5s;
+    }
+    header > nav {
+        padding: 0px;
+    }
+    header a {
+        transition-duration: 0s !important;
+    }
+    header > nav > a {
+        display: block;
+        padding: 20px;
+        height: 60px;
+        transition-duration: 0s;
+    }
+    header > nav > a:first-child {
+        color: rgb(250, 250, 250);
+        background-color: rgb(39, 39, 39);
+    }
+    header > nav:first-child {
+        display: block;
+    }
+    header > nav:first-child > a {
+        padding: 10px 15px 10px 0px;
+        background-color: rgb(250, 250, 250);
+        box-shadow: 0px 0px 5px rgb(120, 120, 120);
+    }
+    header > nav:first-child > a:hover {
+        background-color: rgb(250, 250, 250);
+        box-shadow: 0px 0px 5px rgb(120, 120, 120);
+    }
+    header > nav:first-child img {
+        height: 40px;
+        float: right;
+        border: 1px rgb(220, 220, 220) solid;
+        padding: 4px 2px 2px 2px;
+        border-radius: 3px;
+    }
+    header > nav:last-child {
+        height: 100%;
+        position: relative;
+        max-height: 0px;
+        overflow: hidden;
+        transform: scale(1, 0);
+        transition-duration: 1s;
+        width: 100%;
+        background-color: rgb(39, 39, 39);
+    }
+    header  > nav:last-child.show {
+        max-height: 180px;
+        transform: scale(1, 1);
+        transition-duration: .4s;
+/*
+        box-shadow: 0px 320px 480px 240px rgb(0, 0, 0);
+*/
+    }
+    footer select {
+        display: block;
+        margin: 10px 0px;
+    }
+    .logo h1 {
+        padding: 0px;
+        border: none;
+        box-shadow: none;
+    }
+}

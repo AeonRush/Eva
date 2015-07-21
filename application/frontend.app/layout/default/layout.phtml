@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="<?php echo Eva\Local::getInstance()->getCurrentLanguage() ?>">
+<head>
+	<link rel="shortcut icon" href="/public/image/favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!---
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+-->
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!--- Каноническая ссылка -->
+	<?php if(isset($this->canonical{1})) { ?> <link rel="canonical" href="<?php echo __PROTOCOL__.':'.__HOST__.urldecode($this->canonical)?>"> <?php } ?>
+	<title><?php echo $this->title?></title>
+	<!--- Ключевые слова -->
+	<?php if(isset($this->keywords{16})) { ?> <meta name="keywords" content="<?php echo $this->keywords?>"> <?php } ?>
+	<!--- Описание страницы -->
+	<?php if(isset($this->description{8})) { ?> <meta name="description" content="<?php echo $this->description?>"> <?php } ?>
+
+	<meta name="generator" content="AEON Web Engine">
+	<?php if(!empty($this['meta'])) echo join ('', $this['meta']); ?>
+
+    <!--- Styles -->
+    <link rel="stylesheet" href="/frontend.app/layout/default/default.css">
+
+    <!--- Styles -->
+    <?php  $j = sizeof($this['css']['src']); for($i=0;$i<$j; ++$i) { ?><link rel="stylesheet" href="<?php echo $this['css']['src'][$i]?>"><?php } ?>
+    <?php if(!empty($this['css']['inline'])) { ?><style><?php echo join ('', $this['css']['inline'])?></style><?php } ?>
+
+    <style>
+        @font-face {
+            font-family: 'Neo Sans';
+            src: url('/public/font/NeoSansPro-Regular.woff') format('woff'), url('/public/font/NeoSansPro-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Neo Sans Light';
+            src: url('/public/font/NeoSansPro-Light.woff') format('woff'), url('/public/font/NeoSansPro-Light.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'UnSeen';
+            src: url('/public/font/unseen.woff') format('woff'), url('/public/font/unseen.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Helvetica Ultra Light';
+            src: url('/public/font/helvetica-neue-ultra-light.woff') format('woff'), url('/public/font/helvetica-neue-ultra-light.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+        }
+        * {
+            transition-duration: .5s;
+        }
+        .loading {
+            background: rgb(10, 210, 110) linear-gradient(45deg, rgb(10, 11, 87) 0%, rgb(210, 10, 110) 100%);
+            display: flex;
+            flex-flow: row;
+            align-content: center;
+            justify-content: flex-start;
+            transition-duration: 1s;
+            min-height: 0px;
+            position: relative;
+            height: 100%;
+        }
+        .loading:after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+        }
+        .loading > div {
+            animation: example 5s linear 0s infinite;
+            text-align: center;
+            align-self: center;
+            width: 200px !important;
+            height: 200px !important;
+            border-radius: 100%;
+            max-width: 100%;
+            border: 1px rgba(250, 250, 250, .25) solid;
+            color: rgb(250, 250, 250);
+            box-shadow:
+                -10px -10px 50px rgb(210, 0, 0),
+                -10px 10px 50px rgb(10, 210, 110),
+                10px 10px 50px rgb(10, 110, 210),
+                10px -10px 50px rgb(120, 87, 190);
+        }
+        @keyframes example {
+            0%   { transform: rotateZ(0deg) }
+            100%   { transform: rotateZ(360deg) }
+        }
+        @keyframes example2 {
+            0%   { transform: rotateZ(0deg) }
+            100%   { transform: rotateZ(-360deg) }
+        }
+        .loading > div:after {
+            animation: example2 5s linear 0s infinite;
+        }
+        body.hide > .loading {
+            background-image: linear-gradient(0deg, rgb(39, 39, 39) 40%, rgb(39, 39, 39) 100%);
+            transition-delay: .5s;
+            height: 0px !important;
+            min-height: 0px !important;
+            overflow: hidden;
+        }
+        body.hide > .loading > div {
+            opacity: 0;
+            transition-delay: .5s;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+<div class="loading"><div></div></div>
+<!--- Header section -->
+<header>
+	<!--- Menu -->
+    <nav>
+        <a><img src="/public/image/svg/menu10.svg" alt="Menu" onclick="$('header > nav:last-child').toggleClass('show')"></a>
+    </nav>
+	<nav>
+        <a href="~/">Home</a>
+        <a href="~/hello/">Home</a>
+        <a href="~/новая-страница.html">Home</a>
+	</nav>
+</header>
+<!--- Content section -->
+<?php echo $this->content?>
+<section class="font-white font-light social-share">
+    <div>
+        <h2>Будьте на связи</h2>
+        <nav>
+            <a data-e="<?php echo \AeonRush\Hero::email("achernov.intrid.ru@gmail.com", $this)?>"></a>
+            <a><img src="/public/image/svg/facebook42.svg" alt="Facebook"><span>Facebook</span></a>
+            <a><img src="/public/image/svg/vkcom1.svg" alt="VK"><span>VK</span></a>
+        </nav>
+    </div>
+</section>
+<!--- Footer section -->
+<footer>
+	<div>
+		&copy; <?php echo Date('Y')?><a href="http://aeonrush.com/">AeonRush</a>
+        <?php if(sizeof(Eva\local::getInstance()->getSupportedLanguages()) > 1) { ?>
+            <select onchange="location = '/' + this.value.toLowerCase() + location.pathname.substr(6)">
+                <?php $c = Eva\Local::getInstance()->getCurrentLanguage(); foreach(Eva\Local::getInstance()->getSupportedLanguages() as $k => $v) { ?>
+                    <option value="<?php echo $k?>"<?php if($c == $k) echo ' selected'?>><?php echo $v['language-name']?></option>
+                <?php }; ?>
+            </select>
+        <?php }; ?>
+	</div>
+</footer>
+
+<!--- JavaScript -->
+<script src="/public/javascript/jquery-2.1.1.min.js"></script>
+<script>
+    if(e = document.querySelector("[href^=\"" + decodeURI(location.pathname) + "\"]")) e.classList.add("active");
+    var h = document.querySelector("html").offsetHeight;
+    Array.prototype.forEach.call(document.querySelectorAll("body > article, body > section"), function (e) {
+        e.style.minHeight = h + "px";
+    });
+    window.onload = function() {
+        document.body.classList.add("hide");
+        setTimeout(function() { document.body.style.overflow = 'auto' }, 1500);
+    };
+</script>
+<?php $j = sizeof($this['javascript']['src']); for($i=0;$i<$j; ++$i) { ?><script src="<?php echo $this['javascript']['src'][$i]?>"></script><?php } ?>
+<?php if(!empty($this['javascript']['inline'])) { ?><script><?php echo join ('', $this['javascript']['inline'])?></script><?php } ?>
+</body>
+</html>
