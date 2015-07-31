@@ -51,7 +51,7 @@ namespace Eva {
          */
         public function postprocess(&$html) {
             $evaLanguages = empty($this->appLanguages) ? \app::getParam('eva:languages') : $this->appLanguages;
-            $html = str_replace('~/', '/'.(sizeof($evaLanguages) == 1 ? '' : strtolower($this->getCurrentLanguage()).'/').\app::getParam('eva:urlSection'), $html);
+            $html = str_replace('~/', '/'.(sizeof($evaLanguages) == 1 ? '' : strtolower($this->getCurrentLanguage())).\app::getParam('eva:urlSection'), $html);
         }
 
         /**
